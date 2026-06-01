@@ -1,6 +1,28 @@
 from app.operations import addition, subtraction, multiplication, division
 
-def calculator():
+def calculator() -> None:
+    """
+    Runs an interactive calculator REPL (Read-Eval-Print Loop).
+
+    Prompts the user to enter an operation and two numbers in the format
+    <operation> <a> <b>, computes the result, and prints it. Continues
+    until the user types 'exit'.
+
+    Supported operations:
+        - add: Adds a and b.
+        - subtract: Subtracts b from a.
+        - multiply: Multiplies a and b.
+        - divide: Divides a by b.
+
+    Raises:
+        ZeroDivisionError: If divide is used and b is zero (handled internally).
+        ValueError: If the input format is invalid (handled internally).
+
+    Example:
+        >>> calculator()
+        Enter an operation and two numbers, or 'exit' to quit: add 5 3
+        Result: 8.0
+    """
     print("Welcome to the calculator REPL. Type 'exit' to quit.")
     while True:
         user_input = input("Enter an operation (add, subtract, multiply, divide) and two numbers, or 'exit' to quit: ")
